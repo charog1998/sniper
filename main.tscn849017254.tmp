@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://sqhepeqrcryj"]
+
+[ext_resource type="Script" uid="uid://duilbjakwe8j4" path="res://camera_2d.gd" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://diy3qohvpbln1" path="res://main.gd" id="1_h2yge"]
+[ext_resource type="Texture2D" uid="uid://drb4xa57kaxad" path="res://background.png" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://k0es1tfkrjkp" path="res://cursor.tscn" id="4_1bvp3"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_h2yge")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(720, 450)
+script = ExtResource("1_0xm2m")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 1440.0
+offset_bottom = 900.0
+texture = ExtResource("2_h2yge")
+expand_mode = 1
+
+[node name="cursor" parent="." instance=ExtResource("4_1bvp3")]
+position = Vector2(720, 450)
+scale = Vector2(0.2, 0.2)
+
+[connection signal="focus" from="Camera2D" to="." method="_on_camera_2d_focus"]
+[connection signal="focus_off" from="Camera2D" to="." method="_on_camera_2d_focus_off"]
