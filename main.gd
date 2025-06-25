@@ -11,7 +11,7 @@ func _ready() -> void:
 	$cursor.get_node("AnimationPlayer").play("RESET")
 
 func _process(delta: float) -> void:
-	$cursor.get_node("ProgressBar").value = 100*$Timer.time_left/3
+	$cursor.get_node("TextureProgressBar1").value = 100*$Timer.time_left/3
 	pass
 	#if mouse_warped:
 		#var mouse_pos = get_viewport().get_mouse_position()

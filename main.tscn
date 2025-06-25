@@ -22,7 +22,7 @@ expand_mode = 1
 [node name="cursor" parent="." instance=ExtResource("4_1bvp3")]
 z_index = 99
 position = Vector2(720, 450)
-scale = Vector2(0.7, 0.7)
+scale = Vector2(0.8, 0.8)
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
