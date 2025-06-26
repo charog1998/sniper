@@ -19,7 +19,11 @@ func _input(event):
 
 
 func _ready() -> void:
+	var viewport_size := get_viewport().get_visible_rect().size
+	var center := viewport_size / 2
+	Input.warp_mouse(center)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED_HIDDEN)
+	
 
 func _process(delta: float) -> void:
 	pass

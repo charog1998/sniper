@@ -13,10 +13,7 @@ var move_speed := 0
 
 var is_focused = false
 
-
 const COLORS = [Color.AQUA,Color.BLUE_VIOLET,Color.BROWN,Color.CADET_BLUE,Color.CHOCOLATE,Color.DARK_GREEN,Color.ORANGE]
-
-
 
 func _ready() -> void:
 	init()
@@ -49,8 +46,7 @@ func init(target:bool=false,direction_list:Array=["up","down","left","right"],po
 	$Body.set_modulate(color_parts[2])
 	$Legs.set_modulate(color_parts[3])
 	
-	position = Vector2(randi_range(position_range[0],position_range[3]),randi_range(position_range[1],position_range[3]))
-	
+	position = Vector2(randi_range(position_range[0],position_range[2]),randi_range(position_range[1],position_range[3]))
 	var scale_choosed = randf_range(scale_range[0],scale_range[1])
 	scale = Vector2(scale_choosed,scale_choosed)
 	
@@ -77,8 +73,12 @@ func random_move(distance):
 
 
 func _on_camera_with_cursor_focus_off() -> void:
+	var new_tween = get_tree().create_tween()
+	new_tween.tween_property($Focus_rect,"visible",false,0.1)
 	is_focused = false
 
 
 func _on_camera_with_cursor_focus_on() -> void:
+	var new_tween = get_tree().create_tween()
+	new_tween.tween_property($Focus_rect,"visible",true,0.7)
 	is_focused = true

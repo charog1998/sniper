@@ -14,18 +14,22 @@ offset_bottom = 900.0
 texture = ExtResource("2_h2yge")
 expand_mode = 1
 
-[node name="Human2" parent="." instance=ExtResource("5_lquwl")]
-position = Vector2(6.10352e-05, 3.05176e-05)
-
 [node name="Human" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(720, 450)
 scale = Vector2(0.2, 0.2)
 
+[node name="Human2" parent="." instance=ExtResource("5_lquwl")]
+position = Vector2(6.10352e-05, 3.05176e-05)
+
 [node name="Human3" parent="." instance=ExtResource("5_lquwl")]
 
 [node name="CameraWithCursor" parent="." instance=ExtResource("5_7mycd")]
-position = Vector2(74, 48)
+position = Vector2(720, 450)
 
 [connection signal="fire" from="CameraWithCursor" to="." method="_on_camera_with_cursor_fire"]
 [connection signal="focus_off" from="CameraWithCursor" to="Human" method="_on_camera_with_cursor_focus_off"]
+[connection signal="focus_off" from="CameraWithCursor" to="Human2" method="_on_camera_with_cursor_focus_off"]
+[connection signal="focus_off" from="CameraWithCursor" to="Human3" method="_on_camera_with_cursor_focus_off"]
 [connection signal="focus_on" from="CameraWithCursor" to="Human" method="_on_camera_with_cursor_focus_on"]
+[connection signal="focus_on" from="CameraWithCursor" to="Human2" method="_on_camera_with_cursor_focus_on"]
+[connection signal="focus_on" from="CameraWithCursor" to="Human3" method="_on_camera_with_cursor_focus_on"]
