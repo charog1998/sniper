@@ -21,4 +21,14 @@ theme_override_font_sizes/font_size = 24
 text = "99"
 vertical_alignment = 1
 
+[node name="AddScoreLabel" type="Label" parent="."]
+modulate = Color(1, 0, 0, 1)
+offset_left = 10.0
+offset_top = 42.0
+offset_right = 366.0
+offset_bottom = 77.0
+theme_override_font_sizes/font_size = 24
+text = "99"
+vertical_alignment = 1
+
 [connection signal="timeout" from="FocusTimer" to="." method="end_focus"]

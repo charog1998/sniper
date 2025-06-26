@@ -16,7 +16,6 @@ expand_mode = 1
 
 [node name="Human2" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(6.10352e-05, 3.05176e-05)
-scale = Vector2(1, 1)
 
 [node name="Human" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(720, 450)

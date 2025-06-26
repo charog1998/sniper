@@ -7,6 +7,16 @@ func _input(event):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	if event.is_action_pressed("enter_game"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED_HIDDEN)
+	if event.is_action_pressed("f1"):
+		$CameraWithCursor.position = $Human.position
+		$CameraWithCursor.start_fire()
+		$CameraWithCursor.position = $Human2.position
+		$CameraWithCursor.start_fire()
+		$CameraWithCursor.position = $Human3.position
+		$CameraWithCursor.start_fire()
+		
+		
+
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED_HIDDEN)

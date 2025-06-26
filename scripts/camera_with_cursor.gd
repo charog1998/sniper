@@ -21,7 +21,7 @@ signal focus_off
 func _ready() -> void:
 	current_zoom = default_zoom
 	current_score = 0
-	show_score()
+	show_score("")
 	#$Cursor.get_node("AnimationPlayer").play_backwards("focus")
 	
 func _input(event):
@@ -34,6 +34,7 @@ func _input(event):
 				start_focus()
 			else:
 				end_focus()
+
 		if is_zooming and event.button_index == MOUSE_BUTTON_WHEEL_UP:
 			current_zoom = Vector2(current_zoom.x+SPLIDE_STEP,current_zoom.y+SPLIDE_STEP)
 		if is_zooming and event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
@@ -60,13 +61,14 @@ func end_focus():
 	current_zoom = default_zoom
 	$FocusTimer.stop()
 	$Cursor.get_node("AnimationPlayer").play_backwards("focus")
+	is_zooming = false
 	emit_signal("focus_off")
 	
 func start_fire():
 	var human_center = get_human_at_center()
 	if human_center is Human:
 		current_score += human_center.move_speed
-		show_score()
+		show_score(human_center.move_speed)
 		human_center.init()
 
 	var init_pos = position
@@ -89,5 +91,6 @@ func get_human_at_center()->Human:
 			return hit.collider
 	return null
 	
-func show_score():
-	$ScoreLabel.text = "SCORE："+str(current_score)
+func show_score(add_score):
+	var new_tween = get_tree().create_tween()
+	new_tween.tween_property($ScoreLabel,"text","SCORE："+str(current_score),0.1)
