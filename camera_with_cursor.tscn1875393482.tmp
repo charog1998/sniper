@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://fnfhtuvucgm"]
+
+[ext_resource type="Script" uid="uid://dicahjf406sq8" path="res://camera_with_cursor.gd" id="1_r4cpw"]
+[ext_resource type="PackedScene" uid="uid://k0es1tfkrjkp" path="res://cursor.tscn" id="2_u1o84"]
+
+[node name="CameraWithCursor" type="Camera2D"]
+script = ExtResource("1_r4cpw")
+
+[node name="Cursor" parent="." instance=ExtResource("2_u1o84")]
+
+[node name="FocusTimer" type="Timer" parent="."]

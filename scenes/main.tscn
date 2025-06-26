@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://sqhepeqrcryj"]
+
+[ext_resource type="Script" uid="uid://diy3qohvpbln1" path="res://scripts/main.gd" id="1_h2yge"]
+[ext_resource type="Texture2D" uid="uid://drb4xa57kaxad" path="res://assets/background.png" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://fnfhtuvucgm" path="res://scenes/camera_with_cursor.tscn" id="5_7mycd"]
+[ext_resource type="PackedScene" uid="uid://qil7v8dl20ym" path="res://scenes/human.tscn" id="5_lquwl"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_h2yge")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 1440.0
+offset_bottom = 900.0
+texture = ExtResource("2_h2yge")
+expand_mode = 1
+
+[node name="Human2" parent="." instance=ExtResource("5_lquwl")]
+position = Vector2(6.10352e-05, 3.05176e-05)
+scale = Vector2(1, 1)
+
+[node name="Human" parent="." instance=ExtResource("5_lquwl")]
+position = Vector2(720, 450)
+scale = Vector2(0.2, 0.2)
+
+[node name="Human3" parent="." instance=ExtResource("5_lquwl")]
+
+[node name="CameraWithCursor" parent="." instance=ExtResource("5_7mycd")]
+position = Vector2(74, 48)
+
+[connection signal="fire" from="CameraWithCursor" to="." method="_on_camera_with_cursor_fire"]
+[connection signal="focus_off" from="CameraWithCursor" to="Human" method="_on_camera_with_cursor_focus_off"]
+[connection signal="focus_on" from="CameraWithCursor" to="Human" method="_on_camera_with_cursor_focus_on"]
