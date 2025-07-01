@@ -6,7 +6,7 @@ var current_zoom: Vector2 = Vector2(1.1, 1.1)
 var zoom_speed: float = 5.0
 var is_zooming: bool = false
 
-var focus_time = 3.0 # 瞄准时间
+var focus_time = 300.0 # 瞄准时间
 
 var current_score = 0
 
