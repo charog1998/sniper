@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://diqmqf6mqmpar"
-path="res://.godot/imported/scout.png-c53ce1ec8dcc33623d1b1d33b65c5378.ctex"
+uid="uid://dlx88xd2eoe48"
+path="res://.godot/imported/CursorBackground.png-99019c51ccef4a6701c38ca2db301cba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/scout.png"
-dest_files=["res://.godot/imported/scout.png-c53ce1ec8dcc33623d1b1d33b65c5378.ctex"]
+source_file="res://assets/CursorBackground.png"
+dest_files=["res://.godot/imported/CursorBackground.png-99019c51ccef4a6701c38ca2db301cba.ctex"]
 
 [params]
 
