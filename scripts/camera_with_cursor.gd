@@ -76,6 +76,7 @@ func start_fire():
 	var fire_y_offset = randi_range(-20,20)
 	var new_tween = get_tree().create_tween()
 	new_tween.tween_property(self,"position",Vector2(init_pos.x+fire_x_offset,init_pos.y+fire_y_offset),0.05)
+	$Cursor.get_node("AnimationPlayer").play_backwards("fire")
 	
 func get_human_at_center()->Human:
 	var center_pos := global_position

@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://dumlecdgdd32"]
+
+[ext_resource type="Texture2D" uid="uid://c3kucqvwn8bks" path="res://assets/WindStrength.png" id="1_c8bcu"]
+[ext_resource type="Script" uid="uid://drvvu5ss4f11a" path="res://scripts/up_ui.gd" id="1_wl2dk"]
+
+[node name="UpUI" type="CanvasLayer"]
+script = ExtResource("1_wl2dk")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 398.0
+offset_right = 718.0
+offset_bottom = 326.0
+grow_horizontal = 2
+color = Color(0, 0, 0, 0.180392)
+
+[node name="WindStrength" type="TextureRect" parent="."]
+modulate = Color(0.00392157, 0.690196, 0, 1)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 408.0
+offset_top = 122.0
+offset_right = 708.0
+offset_bottom = 265.0
+grow_horizontal = 2
+rotation = 1.5708
+pivot_offset = Vector2(150, 71)
+texture = ExtResource("1_c8bcu")
+
+[node name="WindStrengthLabel" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 522.5
+offset_right = 593.5
+offset_bottom = 69.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "5.0"
